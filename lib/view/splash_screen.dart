@@ -39,7 +39,7 @@ class SplashScreen extends StatelessWidget {
 
             InkWell(
               onTap: (){
-                Get.to(FirstItroductionScreen());
+                Get.to(SecondSplashScreen());
               },
               child: Container(
                 alignment: Alignment.center,
