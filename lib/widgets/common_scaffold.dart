@@ -21,6 +21,7 @@ class CommonScaffold extends StatelessWidget {
 
       ),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: child,
 
