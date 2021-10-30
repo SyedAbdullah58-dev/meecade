@@ -6,3 +6,5 @@ Color mainTextColor=Color(0xffF7E409);
 Color purpleContainer=Color(0xff38315F);
 Color facebookbutton=Color(0xff23219E
 );
+Color homeScreenColor=Color(0xffD9C1FF);
+Color homeContainerColor=Color(0xffEBD449);

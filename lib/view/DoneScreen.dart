@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:meecade/controllers/bottom_nav_bar_controller.dart';
 import 'package:meecade/controllers/otp_controller.dart';
+import 'package:meecade/view/navbar_page.dart';
 import 'package:meecade/widgets/common_scaffold.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meecade/widgets/custom_button.dart';
@@ -12,8 +14,8 @@ import 'package:meecade/widgets/custom_text.dart';
 import '../constants.dart';
 import 'home_screen.dart';
 class DoneScreen extends StatelessWidget {
-  const DoneScreen({Key? key}) : super(key: key);
 
+  BottomNavigationPageController bottomNavigationPageController=Get.put(BottomNavigationPageController());
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
@@ -52,7 +54,7 @@ class DoneScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 90.h,left: 20.w,right: 20.w),
               child: customButton(text: "Next",textColor: purpleContainer,buttonColor: mainTextColor,function: (){
-                Get.to(HomeScreen());}),
+                Get.to(NavBarPage());}),
             )
               ],)
             ),
