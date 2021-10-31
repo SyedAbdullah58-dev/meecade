@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,10 +6,13 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meecade/constants.dart';
 import 'package:meecade/view/edit_profile_screen.dart';
+import 'package:meecade/widgets/caroulsol_custom_container.dart';
+import 'package:meecade/widgets/carousol_container.dart';
 import 'package:meecade/widgets/customOption.dart';
 import 'package:meecade/widgets/custom_button.dart';
 import 'package:meecade/widgets/custom_home_container.dart';
 import 'package:meecade/widgets/custom_text.dart';
+import 'package:meecade/widgets/electronic_custom_Carousel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -156,88 +160,24 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              /*Main Container*/
+              /**
+               * Main container welcome to Meecado
+               */
               Padding(
                 padding: EdgeInsets.only(top: 40.h),
-                child: Container(
-                  width: 380.w,
-                  height: 230.h,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.r),
-                      color: homeContainerColor),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 10.h, left: 10.w),
-                    child: Row(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                customText(
-                                    text: "Welcome to Meecado",
-                                    fontSize: 20.sp,
-                                    textColor: purpleContainer,
-                                    fontWeight: FontWeight.bold),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                customText(
-                                    text: "30 % off",
-                                    fontSize: 20.sp,
-                                    textColor: purpleContainer,
-                                    fontWeight: FontWeight.bold),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                customText(
-                                    text: "Grocery Shopping",
-                                    fontSize: 25.sp,
-                                    textColor: purpleContainer,
-                                    fontWeight: FontWeight.bold),
-                              ],
-                            ),
-                            Expanded(
-                              child: Container(),
-                            ),
-                            Row(
-                              children: [
-                                Container(
-                                  alignment: Alignment.center,
-                                  height: 40.h,
-                                  width: 124.w,
-                                  child: Text(
-                                    "Shop Now",
-                                    style: GoogleFonts.roboto(
-                                        color: mainTextColor),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  decoration: BoxDecoration(
-                                      color: purpleContainer,
-                                      borderRadius:
-                                          BorderRadius.circular(15.r)),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 10.h,
-                            )
-                          ],
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 10.w),
-                          child: Flexible(
-                            child: Container(
-                                height: 194.h,
-                                width: 200.w,
-                                child: Image.asset("assets/boy.png")),
-                          ),
-                        )
-                      ],
-                    ),
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                   scrollDirection: Axis.horizontal,
+                  autoPlay: true,
+                    enableInfiniteScroll: true
                   ),
+                  items: [carosoulContainer(image: "assets/boy.png",),
+                    carosoulCustomContainer(image:"assets/sale.png",text1: "50% Sale",text2: "Women's Fashion",text3: "",buttonText: "Shop Now",),
+                    carosoulCustomContainer(image:"assets/rider.png",text1: "Welcome to Meecado",text2: "Build Your Order",text3: "",buttonText: "Order",),
+                    ElectronicCustomCarousel(text1: "Electronics 10 Categories")
+
+                  ],
+
                 ),
               ),
               Padding(
@@ -326,11 +266,14 @@ class HomeScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.r),
                       color: homeContainerColor),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 10.h, left: 10.w),
-                    child: Row(
-                      children: [
-                        Column(
+                  child: Row(
+                    children: [
+                      /**
+                       * Text in the Container
+                       */
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Row(
@@ -362,12 +305,13 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Container(
-                            height: 77.h,
-                            width: 139.w,
-                            child: Image.asset("assets/caps.png"))
-                      ],
-                    ),
+                      ),
+                      /**
+                       * Image in the Container
+                       */
+                      Container(
+                          child: Image.asset("assets/caps.png",fit: BoxFit.fill,))
+                    ],
                   ),
                 ),
               ),
@@ -379,11 +323,14 @@ class HomeScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.r),
                       color: homeContainerColor),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 10.h, left: 10.w),
-                    child: Row(
-                      children: [
-                        Column(
+                  child: Row(
+                    children: [
+                      /**
+                       * Text in the Container
+                       */
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Row(
@@ -415,14 +362,17 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Container(
-                            height: 77.h,
-                            child: Image.asset("assets/caps.png"))
-                      ],
-                    ),
+                      ),
+                      /**
+                       * Image in the Container
+                       */
+                      Container(
+                          child: Image.asset("assets/caps.png",fit: BoxFit.fill,))
+                    ],
                   ),
                 ),
               ),
+
             ],
           ),
         ),
@@ -431,3 +381,5 @@ class HomeScreen extends StatelessWidget {
   }
 
 }
+
+
