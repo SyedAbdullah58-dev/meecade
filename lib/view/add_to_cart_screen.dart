@@ -166,7 +166,7 @@ CartController controller=Get.put(CartController());
                           minRating: 1,
                           direction: Axis.horizontal,
                           allowHalfRating: true,
-                          itemCount: 4,
+                          itemCount: 5,
                           itemPadding: EdgeInsets.symmetric(horizontal: 1.w),
                           itemBuilder: (context, _) => Icon(
                             Icons.star_border,size: 5.r,

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:meecade/controllers/bottom_nav_bar_controller.dart';
 import 'package:meecade/controllers/cart_controller.dart';
+import 'package:meecade/view/order_detail_screen.dart';
 import 'package:meecade/widgets/custom_text.dart';
 import '../constants.dart';
 
@@ -50,94 +51,111 @@ class ContinueCartScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(top: 10.h),
      child: Column(children: [
-       customText(text: "Order"),
-       Container(height: 110.h,
-       decoration: BoxDecoration(color: mainTextColor),
-       child: Row(children: [
-         SizedBox(width: 20.w,),
-         Container(
-           width: 79.w,
-           height: 64.h,
-           decoration: BoxDecoration(
-             image: DecorationImage(
-                 fit: BoxFit.fill,
-                 image: AssetImage("assets/headset.png")),
-             borderRadius: BorderRadius.circular(15.r),
-           ),
-         ),
-         SizedBox(width: 20.w,),
-         Column(crossAxisAlignment: CrossAxisAlignment.start,
-           mainAxisAlignment: MainAxisAlignment.center,
-
+       Padding(
+         padding:  EdgeInsets.symmetric(horizontal: 20.w,vertical: 10.h),
+         child: Row(
            children: [
-             customText(
-                 text: "Awsome Electronics",
-                 fontWeight: FontWeight.bold,
-                 fontSize: 20.sp),
-             Row(
-               children: [
-                 customText(
-                     text: "Head Phones",
-                     fontWeight: FontWeight.bold,
-                     fontSize: 12.sp),
-               SizedBox(width: 120.w,),
-                 GetBuilder<CartController>(
-                     builder: (controller) {
-                       return Container(
-
-                         padding: EdgeInsets.only(right: 30.w),
-                         alignment: Alignment.centerRight,
-                         child: Row(mainAxisAlignment: MainAxisAlignment.end,
-                           children: [
-
-                             InkWell(
-                               onTap: (){
-                                 controller.counter+=1;
-                                 controller.update();
-
-                               },
-                               child: Icon(
-                                 Icons.add_circle,
-                                 size: 20.r,
-                               ),
-                             ),
-                             Padding(
-                               padding: EdgeInsets.symmetric(horizontal: 2.w),
-                               child: customText(text: controller.counter.toString()),
-                             ),
-                             InkWell(
-                               onTap: (){
-                                 if(controller.counter!=0)
-                                   controller.counter-=1;
-                                 controller.update();
-                               },
-                               child: Icon(
-                                 Icons.remove_circle,
-                                 size: 20.r,
-                               ),
-                             ),
-                           ],
-                         ),
-                       );
-                     }
-                 )
-               ],
-
-             ),
-             Row(
-               children: [
-                 customText(
-                     text: "Rs 650",
-                     fontWeight: FontWeight.bold,
-                     fontSize: 12.sp),
-               ],
-             ),
-
+             customText(text: "Your Order",fontSize: 20.sp,fontWeight: FontWeight.bold),
            ],
          ),
-       ],),
-
        ),
+       /**
+        * The Yellow Container
+        */
+       InkWell(
+         onTap: (){
+           Get.to(OrderDetailScreen());
+         },
+         child: Container(height: 110.h,
+         decoration: BoxDecoration(color: mainTextColor),
+         child: Row(children: [
+           SizedBox(width: 20.w,),
+
+           Container(
+             width: 79.w,
+             height: 64.h,
+             decoration: BoxDecoration(
+               image: DecorationImage(
+                   fit: BoxFit.fill,
+                   image: AssetImage("assets/headset.png")),
+               borderRadius: BorderRadius.circular(15.r),
+             ),
+           ),
+           SizedBox(width: 20.w,),
+           Column(crossAxisAlignment: CrossAxisAlignment.start,
+             mainAxisAlignment: MainAxisAlignment.center,
+
+             children: [
+               customText(
+                   text: "Awsome Electronics",
+                   fontWeight: FontWeight.bold,
+                   fontSize: 20.sp),
+               Row(
+                 children: [
+                   customText(
+                       text: "Head Phones",
+                       fontWeight: FontWeight.bold,
+                       fontSize: 12.sp),
+                 SizedBox(width: 120.w,),
+                   GetBuilder<CartController>(
+                       builder: (controller) {
+                         return Container(
+
+                           padding: EdgeInsets.only(right: 30.w),
+                           alignment: Alignment.centerRight,
+                           child: Row(mainAxisAlignment: MainAxisAlignment.end,
+                             children: [
+
+                               InkWell(
+                                 onTap: (){
+                                   controller.counter+=1;
+                                   controller.update();
+
+                                 },
+                                 child: Icon(
+                                   Icons.add_circle,
+                                   size: 20.r,
+                                 ),
+                               ),
+                               Padding(
+                                 padding: EdgeInsets.symmetric(horizontal: 2.w),
+                                 child: customText(text: controller.counter.toString()),
+                               ),
+                               InkWell(
+                                 onTap: (){
+                                   if(controller.counter!=0)
+                                     controller.counter-=1;
+                                   controller.update();
+                                 },
+                                 child: Icon(
+                                   Icons.remove_circle,
+                                   size: 20.r,
+                                 ),
+                               ),
+                             ],
+                           ),
+                         );
+                       }
+                   )
+                 ],
+
+               ),
+               Row(
+                 children: [
+                   customText(
+                       text: "Rs 650",
+                       fontWeight: FontWeight.bold,
+                       fontSize: 12.sp),
+                 ],
+               ),
+
+             ],
+           ),
+         ],),
+
+         ),
+       ),
+       Divider(thickness: 1.h,height: 0.1.h,),
        Container(height: 110.h,
        decoration: BoxDecoration(color: mainTextColor),
        child: Row(children: [
@@ -223,7 +241,6 @@ class ContinueCartScreen extends StatelessWidget {
            ],
          ),
        ],),
-
        ),
        Expanded(child: Container()),
        Container(
@@ -246,8 +263,6 @@ class ContinueCartScreen extends StatelessWidget {
        Container(
          decoration: BoxDecoration(
            color: Color(0xff38315F),
-
-
          ),
          height: 65.h,
          child:Row(
@@ -260,9 +275,7 @@ class ContinueCartScreen extends StatelessWidget {
      ],),
         ),
       ),
-
       bottomNavigationBar: BottomNavigationBar(
-
         backgroundColor: Colors.blue,
         selectedItemColor: Color(0xffAA74B1),
         unselectedItemColor: Color(0xff38315F),
@@ -271,27 +284,22 @@ class ContinueCartScreen extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
             backgroundColor: homeContainerColor,
-
             icon: Icon(Icons.home,
-
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.list,
-
             ),
             label: 'Search',
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.folder_shared,
-
               ),
               label: 'Favorite'
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline,
-
             ),
             label: 'Profile',
           ),

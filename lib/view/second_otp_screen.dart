@@ -50,21 +50,19 @@ Row(
       padding:  EdgeInsets.symmetric(vertical: 20.h,horizontal: 7.w),
       child:   Container(
 alignment: Alignment.bottomCenter,
-        child: Flexible(
-          child: TextField(
-            controller: otpController.otp1,
-            textAlign: TextAlign.center,
-            keyboardType: TextInputType.phone,
+        child: TextField(
+          controller: otpController.otp1,
+          textAlign: TextAlign.center,
+          keyboardType: TextInputType.phone,
 
-            decoration: InputDecoration(
-
+          decoration: InputDecoration(
 
 
-                  border: InputBorder.none
 
-            ),
+                border: InputBorder.none
 
           ),
+
         ),
 
         height: 60.h,

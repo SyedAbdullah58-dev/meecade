@@ -41,14 +41,14 @@ class product_container extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 5.h),
+            padding: EdgeInsets.only(top: 5.h),
             child: Container(
                 alignment: Alignment.centerLeft,
                 width: 122.w,
                 child: customText(text: martName,fontSize: 12.sp)),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 5.h),
+            padding: EdgeInsets.only(top: 5.h),
             child: Container(
                 alignment: Alignment.centerLeft,
                 width: 122.w,

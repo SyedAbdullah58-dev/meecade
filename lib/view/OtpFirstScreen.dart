@@ -68,49 +68,43 @@ class OtpFirstScreen extends StatelessWidget {
                                 Divider(
                                   color: Colors.purple,
                                 ),
-                                Row(
-                                  children: [
-                                    Flexible(
-                                      child: Container(
-                                        child: TextFormField(
-                                          decoration: InputDecoration(
-                                              border: InputBorder.none,
-                                              hintText:
-                                                  "${otpController.countryCode}"),
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 3,
-                                      child: Container(
-                                        child: TextFormField(
+                                Padding(
+                                  padding:  EdgeInsets.symmetric(horizontal: 20.w),
+                                  child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+SizedBox(width: 80.w,),
+                                      Expanded(
+                                        flex: 3,
+                                        child: Container(
+                                          child: TextFormField(
 onChanged: (str){
   otpController.update();
 },
-                                          style: GoogleFonts.roboto(
-                                              color: gradientColors[0]),
-                                          keyboardType: TextInputType.phone,
-                                          decoration: InputDecoration(
-                                              border: InputBorder.none,
-                                              hintText: " Phone Number"),
-                                          controller: otpController.phoneNo,
+                                            style: GoogleFonts.roboto(
+                                                color: gradientColors[0]),
+                                            keyboardType: TextInputType.phone,
+                                            decoration: InputDecoration(
+                                                border: InputBorder.none,
+                                                hintText: " Phone Number"),
+                                            controller: otpController.phoneNo,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                   GetBuilder<OtpController>(
+                                     GetBuilder<OtpController>(
 
-                                     builder: (optController) {
-                                       return otpController.phoneNo.text.length==10? Container(
-                                          height: 34.h,
-                                          width: 34.w,
-                                          decoration: BoxDecoration(
-                                            color: Colors.green,shape: BoxShape.circle,
-                                          ),
-                                          child: Icon(Icons.check,color: Colors.white,size: 20.r,),
-                                        ):Container();
-                                     }
-                                   )
-                                  ],
+                                       builder: (optController) {
+                                         return otpController.phoneNo.text.length==10? Container(
+                                            height: 34.h,
+                                            width: 34.w,
+                                            decoration: BoxDecoration(
+                                              color: Colors.green,shape: BoxShape.circle,
+                                            ),
+                                            child: Icon(Icons.check,color: Colors.white,size: 20.r,),
+                                          ):Container();
+                                       }
+                                     )
+                                    ],
+                                  ),
                                 ),
 
                               ],

@@ -35,6 +35,10 @@ dependencies:
   country_list_pick: ^1.0.1+5
   carousel_slider: ^4.0.0
 
+
+
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
