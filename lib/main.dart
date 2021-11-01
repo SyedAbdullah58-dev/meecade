@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:meecade/view/delivery_location_screen.dart';
 import 'package:meecade/view/splash_screen.dart';
 
 void main() {
+
   runApp(MyApp());
 }
 
@@ -29,7 +32,9 @@ designSize: Size(428,926),
             // is not restarted.
             primarySwatch: Colors.blue,
           ),
-          home: SplashScreen()
+          home: DeliveryLocationScreen()
+
+          /*SplashScreen()*/
         );
       }
     );
