@@ -1,6 +1,9 @@
 
 
 import 'package:get/get.dart';
+import 'package:meecade/view/delivery_location_screen.dart';
+import 'package:meecade/view/edit_profile_screen.dart';
+import 'package:meecade/view/electronic_shop_screen.dart';
 import 'package:meecade/view/home_screen.dart';
 
 
@@ -11,6 +14,9 @@ final currentIndex = 0.obs;
 
   List pages = [
     HomeScreen(),
+ElectronicShopScreen(),
+DeliveryLocationScreen(),
+    EditProfileScreen(),
 
   ];
 

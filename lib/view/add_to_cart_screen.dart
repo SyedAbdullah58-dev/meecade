@@ -246,42 +246,7 @@ CartController controller=Get.put(CartController());
         ),
       ),
 
-      bottomNavigationBar: BottomNavigationBar(
 
-        backgroundColor: Colors.blue,
-        selectedItemColor: Color(0xffAA74B1),
-        unselectedItemColor: Color(0xff38315F),
-        currentIndex: BottomNavigationPageController.to.currentIndex.value,
-        onTap: BottomNavigationPageController.to.changePage,
-        items: [
-          BottomNavigationBarItem(
-            backgroundColor: homeContainerColor,
-
-            icon: Icon(Icons.home,
-
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list,
-
-            ),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.folder_shared,
-
-              ),
-              label: 'Favorite'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline,
-
-            ),
-            label: 'Profile',
-          ),
-        ],
-      ),
     );
   }
 }

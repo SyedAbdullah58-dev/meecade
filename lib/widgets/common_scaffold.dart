@@ -5,9 +5,11 @@ import '../constants.dart';
 
 class CommonScaffold extends StatelessWidget {
   CommonScaffold({
-    this.child
+    this.child,
+    this.drawer
   }) ;
   Widget? child;
+  Widget? drawer;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,6 +23,7 @@ class CommonScaffold extends StatelessWidget {
 
       ),
       child: Scaffold(
+        drawer: drawer,
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: child,

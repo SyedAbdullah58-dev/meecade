@@ -63,7 +63,7 @@ class ElectronicCustomCarousel extends StatelessWidget {
                  children: [
                    InkWell(
                      onTap: (){
-                       Get.to(ElectronicShopScreen());
+                      // Get.to(ElectronicShopScreen());
                      },
                        child: customHomeContainer(title: "Electronics",image: "assets/electronic.png",)),
                    SizedBox(width: 20.w,),

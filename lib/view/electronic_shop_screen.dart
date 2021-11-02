@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:meecade/controllers/bottom_nav_bar_controller.dart';
 import 'package:meecade/widgets/caroulsol_custom_container.dart';
 import 'package:meecade/widgets/carousol_container.dart';
@@ -107,7 +108,7 @@ class ElectronicShopScreen extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Scaffold.of(context).openDrawer();
+                        Get.back();
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -240,42 +241,7 @@ Padding(
           ),
         ),
       ),
-   bottomNavigationBar: BottomNavigationBar(
-
-     backgroundColor: Colors.blue,
-     selectedItemColor: Color(0xffAA74B1),
-     unselectedItemColor: Color(0xff38315F),
-     currentIndex: BottomNavigationPageController.to.currentIndex.value,
-     onTap: BottomNavigationPageController.to.changePage,
-     items: [
-       BottomNavigationBarItem(
-         backgroundColor: homeContainerColor,
-
-         icon: Icon(Icons.home,
-
-         ),
-         label: 'Home',
-       ),
-       BottomNavigationBarItem(
-         icon: Icon(Icons.list,
-
-         ),
-         label: 'Search',
-       ),
-       BottomNavigationBarItem(
-           icon: Icon(Icons.folder_shared,
-
-           ),
-           label: 'Favorite'
-       ),
-       BottomNavigationBarItem(
-         icon: Icon(Icons.person_outline,
-
-         ),
-         label: 'Profile',
-       ),
-     ],
-   ), );
+  );
   }
 }
 

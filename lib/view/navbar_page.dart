@@ -5,6 +5,9 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:meecade/constants.dart';
 import 'package:meecade/controllers/bottom_nav_bar_controller.dart';
 
+import 'delivery_location_screen.dart';
+import 'edit_profile_screen.dart';
+import 'electronic_shop_screen.dart';
 import 'home_screen.dart';
 
 class NavBarPage extends StatelessWidget {
@@ -16,7 +19,9 @@ class NavBarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     List pages = [
       HomeScreen(),
-
+      ElectronicShopScreen(),
+      DeliveryLocationScreen(),
+      EditProfileScreen(),
       // FavouritesScreen(),
 
     ];
@@ -47,13 +52,13 @@ backgroundColor: homeContainerColor,
               icon: Icon(Icons.list,
 
               ),
-              label: 'Search',
+              label: 'Orders',
             ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.folder_shared,
 
                 ),
-                label: 'Favorite'
+                label: 'categories'
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outline,

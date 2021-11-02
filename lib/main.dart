@@ -32,9 +32,8 @@ designSize: Size(428,926),
             // is not restarted.
             primarySwatch: Colors.blue,
           ),
-          home: DeliveryLocationScreen()
-
-          /*SplashScreen()*/
+          home:
+          SplashScreen()
         );
       }
     );

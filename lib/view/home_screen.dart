@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       drawer: Drawer(
         child: Container(
           decoration: BoxDecoration(
@@ -87,24 +88,29 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        Scaffold.of(context).openDrawer();
-                        Get.to(EditProfileScreen());
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15.r),
-                            border: Border.all(
-                              color: gradientColors[0],
-                            )),
-                        height: 45.h,
-                        width: 70.w,
-                        child: Icon(
-                          Icons.reorder,
-                          size: 40.r,
-                        ),
-                      ),
+                    Builder(
+
+                        builder: (context) {
+                          return GestureDetector(
+                            onTap: () {
+                              Scaffold.of(context).openDrawer();
+
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15.r),
+                                  border: Border.all(
+                                    color: gradientColors[0],
+                                  )),
+                              height: 45.h,
+                              width: 70.w,
+                              child: Icon(
+                                Icons.reorder,
+                                size: 40.r,
+                              ),
+                            ),
+                          );
+                        }
                     ),
                     SizedBox(
                       width: 20.w,
@@ -272,7 +278,7 @@ class HomeScreen extends StatelessWidget {
                        * Text in the Container
                        */
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.only(top: 10.h,right: 5.w,left: 15.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -298,7 +304,7 @@ class HomeScreen extends StatelessWidget {
                               children: [
                                 customText(
                                     text: "Grocery Shopping",
-                                    fontSize: 15.sp,
+                                    fontSize: 12.sp,
                                     textColor: purpleContainer,
                                     fontWeight: FontWeight.bold),
                               ],
@@ -309,8 +315,13 @@ class HomeScreen extends StatelessWidget {
                       /**
                        * Image in the Container
                        */
-                      Container(
-                          child: Image.asset("assets/caps.png",fit: BoxFit.fill,))
+                      Expanded(
+                        child: Container(
+                          color: Colors.purple,
+                          height: 80.h,
+                        
+                            child: Image.asset("assets/caps.png",fit: BoxFit.fill,)),
+                      )
                     ],
                   ),
                 ),
@@ -329,7 +340,7 @@ class HomeScreen extends StatelessWidget {
                        * Text in the Container
                        */
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.only(top: 10.h,right: 5.w,left: 15.w),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -355,7 +366,7 @@ class HomeScreen extends StatelessWidget {
                               children: [
                                 customText(
                                     text: "Grocery Shopping",
-                                    fontSize: 15.sp,
+                                    fontSize: 12.sp,
                                     textColor: purpleContainer,
                                     fontWeight: FontWeight.bold),
                               ],
@@ -366,12 +377,19 @@ class HomeScreen extends StatelessWidget {
                       /**
                        * Image in the Container
                        */
-                      Container(
-                          child: Image.asset("assets/caps.png",fit: BoxFit.fill,))
+                      Expanded(
+                        child: Container(
+                          color: Colors.purple,
+                          height: 80.h,
+
+                            child: Image.asset("assets/caps.png",fit: BoxFit.fill,)),
+                      )
                     ],
                   ),
                 ),
               ),
+              SizedBox(height: 40.h,)
+
 
             ],
           ),
