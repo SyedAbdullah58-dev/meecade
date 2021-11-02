@@ -100,11 +100,12 @@ class OrderSummaryScreen extends StatelessWidget {
                               children: [
                                 InkWell(
                                   onTap: () {
-                                    controller.counter += 1;
+                                    if (controller.counter != 0)
+                                      controller.counter -= 1;
                                     controller.update();
                                   },
                                   child: Icon(
-                                    Icons.add_circle,
+                                    Icons.remove_circle,
                                     size: 20.r,
                                   ),
                                 ),
@@ -116,12 +117,11 @@ class OrderSummaryScreen extends StatelessWidget {
                                 ),
                                 InkWell(
                                   onTap: () {
-                                    if (controller.counter != 0)
-                                      controller.counter -= 1;
+                                    controller.counter += 1;
                                     controller.update();
                                   },
                                   child: Icon(
-                                    Icons.remove_circle,
+                                    Icons.add_circle,
                                     size: 20.r,
                                   ),
                                 ),
@@ -183,8 +183,9 @@ class OrderSummaryScreen extends StatelessWidget {
           /**
            * First row
            */
+          SizedBox(height: 10.h,),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
             child: Row(
               children: [
                 Container(
@@ -226,11 +227,44 @@ class OrderSummaryScreen extends StatelessWidget {
               ],
             ),
           ),
+          Padding(
+            padding:  EdgeInsets.only(left:25.w,top: 5.h),
+            child: Row(children: [Container(
+              height: 8.h,
+              width: 8.w,
+              decoration: BoxDecoration(
+                color: Colors.purple,
+                shape: BoxShape.circle
+              ),
+            )],),
+          ),
+          Padding(
+            padding:  EdgeInsets.only(left:25.w,top: 5.h),
+            child: Row(children: [Container(
+              height: 8.h,
+              width: 8.w,
+              decoration: BoxDecoration(
+                color: Colors.purple,
+                shape: BoxShape.circle
+              ),
+            )],),
+          ),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal:25.w,vertical: 5.h),
+            child: Row(children: [Container(
+              height: 8.h,
+              width: 8.w,
+              decoration: BoxDecoration(
+                color: Colors.purple,
+                shape: BoxShape.circle
+              ),
+            )],),
+          ),
           /**
            * Second Row
            */
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
             child: Row(
               children: [
                 Icon(Icons.check_circle,color: Colors.green,size: 25.r,),
@@ -266,11 +300,44 @@ class OrderSummaryScreen extends StatelessWidget {
               ],
             ),
           ),
+          Padding(
+            padding:  EdgeInsets.only(left:25.w,top: 5.h),
+            child: Row(children: [Container(
+              height: 8.h,
+              width: 8.w,
+              decoration: BoxDecoration(
+                  color: Colors.purple,
+                  shape: BoxShape.circle
+              ),
+            )],),
+          ),
+          Padding(
+            padding:  EdgeInsets.only(left:25.w,top: 5.h),
+            child: Row(children: [Container(
+              height: 8.h,
+              width: 8.w,
+              decoration: BoxDecoration(
+                  color: Colors.purple,
+                  shape: BoxShape.circle
+              ),
+            )],),
+          ),
+          Padding(
+            padding:  EdgeInsets.only(left:25.w,top: 5.h),
+            child: Row(children: [Container(
+              height: 8.h,
+              width: 8.w,
+              decoration: BoxDecoration(
+                  color: Colors.purple,
+                  shape: BoxShape.circle
+              ),
+            )],),
+          ),
           /**
            * third row
            */
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
             child: Row(
               children: [
                 Icon(Icons.check_circle,color: Colors.green,size: 25.r,),
@@ -311,7 +378,40 @@ class OrderSummaryScreen extends StatelessWidget {
            * fourth row
            */
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+            padding:  EdgeInsets.only(left:25.w,top: 5.h),
+            child: Row(children: [Container(
+              height: 8.h,
+              width: 8.w,
+              decoration: BoxDecoration(
+                  color: Colors.purple,
+                  shape: BoxShape.circle
+              ),
+            )],),
+          ),
+          Padding(
+            padding:  EdgeInsets.only(left:25.w,top: 5.h),
+            child: Row(children: [Container(
+              height: 8.h,
+              width: 8.w,
+              decoration: BoxDecoration(
+                  color: Colors.purple,
+                  shape: BoxShape.circle
+              ),
+            )],),
+          ),
+          Padding(
+            padding:  EdgeInsets.only(left:25.w,top: 5.h),
+            child: Row(children: [Container(
+              height: 8.h,
+              width: 8.w,
+              decoration: BoxDecoration(
+                  color: Colors.purple,
+                  shape: BoxShape.circle
+              ),
+            )],),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             child: Row(
               children: [
                 Icon(Icons.check_circle,color: Colors.green,size: 25.r,),

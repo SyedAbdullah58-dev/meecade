@@ -40,7 +40,7 @@ class OtpFirstScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(top: 50.h),
                     child: customText(
-                        text: "ENTER YOUR Mobile Number",
+                        text: "ENTER YOUR MOBILE NUMBER",
                         textColor: gradientColors[0],
                         fontSize: 26.sp),
                   ),
@@ -128,7 +128,7 @@ onChanged: (str){
 
                     builder: (otpController) {
                       return Padding(
-                        padding: EdgeInsets.symmetric(vertical: 40.h,horizontal: 40.w,),
+                        padding: EdgeInsets.symmetric(vertical: 20.h,horizontal: 40.w,),
                         child: customButton(text: "Send Otp",buttonColor: otpController.phoneNo.text.length==10?mainTextColor:Color(0xffE5E5E5),textColor: purpleContainer,function: (){
                           if( otpController.phoneNo.text.length==10)
                             Get.to(SecondOtpScreen());
@@ -138,7 +138,10 @@ onChanged: (str){
 
                       );
                     }
-                  )
+                  ),
+
+                  customText(text: "By tapping send OTP I am agree to",textColor: Color(0xffC9A9FC)),
+                  customText(text: "Terms and Condition Privacy & Policy",textColor: Colors.white)
 
                 ],
               ),

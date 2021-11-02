@@ -43,7 +43,7 @@ class ContinueCartScreen extends StatelessWidget {
             Icons.shopping_cart,
             size: 30.r,
             color: Color(0xffA66DA7),
-          )
+          ),SizedBox(width: 20.w,)
         ],
       ),
       body: Container(
@@ -108,12 +108,12 @@ class ContinueCartScreen extends StatelessWidget {
 
                                InkWell(
                                  onTap: (){
-                                   controller.counter+=1;
+                                   if(controller.counter!=0)
+                                     controller.counter-=1;
                                    controller.update();
-
                                  },
                                  child: Icon(
-                                   Icons.add_circle,
+                                   Icons.remove_circle,
                                    size: 20.r,
                                  ),
                                ),
@@ -121,14 +121,15 @@ class ContinueCartScreen extends StatelessWidget {
                                  padding: EdgeInsets.symmetric(horizontal: 2.w),
                                  child: customText(text: controller.counter.toString()),
                                ),
+
                                InkWell(
                                  onTap: (){
-                                   if(controller.counter!=0)
-                                     controller.counter-=1;
+                                   controller.counter+=1;
                                    controller.update();
+
                                  },
                                  child: Icon(
-                                   Icons.remove_circle,
+                                   Icons.add_circle,
                                    size: 20.r,
                                  ),
                                ),
@@ -197,12 +198,12 @@ class ContinueCartScreen extends StatelessWidget {
 
                              InkWell(
                                onTap: (){
-                                 controller.counter+=1;
+                                 if(controller.counter!=0)
+                                   controller.counter-=1;
                                  controller.update();
-
                                },
                                child: Icon(
-                                 Icons.add_circle,
+                                 Icons.remove_circle,
                                  size: 20.r,
                                ),
                              ),
@@ -210,14 +211,15 @@ class ContinueCartScreen extends StatelessWidget {
                                padding: EdgeInsets.symmetric(horizontal: 2.w),
                                child: customText(text: controller.counter.toString()),
                              ),
+
                              InkWell(
                                onTap: (){
-                                 if(controller.counter!=0)
-                                   controller.counter-=1;
+                                 controller.counter+=1;
                                  controller.update();
+
                                },
                                child: Icon(
-                                 Icons.remove_circle,
+                                 Icons.add_circle,
                                  size: 20.r,
                                ),
                              ),
@@ -268,8 +270,12 @@ class ContinueCartScreen extends StatelessWidget {
          child:Row(
            mainAxisAlignment: MainAxisAlignment.center,
            children: [
+             Icon(Icons.shopping_bag_rounded,color: mainTextColor,),SizedBox(width: 5.w,),
              customText(text: "Keep Shopping",textColor: mainTextColor,fontSize: 20.sp,fontWeight: FontWeight.bold),
-             SizedBox(width: 45.w,),
+             SizedBox(width: 20.w,),
+             VerticalDivider(color: mainTextColor,thickness: 2.w,),
+             SizedBox(width: 20.w,),
+             Icon(Icons.check_circle,color: mainTextColor,),SizedBox(width: 5.w,),
              customText(text: "Checkout",textColor: mainTextColor,fontSize: 20.sp,fontWeight: FontWeight.bold),
            ],) ,)
      ],),

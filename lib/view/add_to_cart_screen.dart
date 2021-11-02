@@ -46,7 +46,8 @@ CartController controller=Get.put(CartController());
             Icons.shopping_cart,
             size: 30.r,
             color: Color(0xffA66DA7),
-          )
+          ),
+          SizedBox(width: 20.w,)
         ],
       ),
       body: Container(
@@ -113,7 +114,18 @@ CartController controller=Get.put(CartController());
                               width: Get.width*0.9,
                               child: Row(mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-
+                                  InkWell(
+                                    onTap: (){
+                                      if(controller.counter!=0)
+                                        controller.counter-=1;
+                                      controller.update();
+                                    },
+                                    child: Icon(
+                                      Icons.remove_circle,
+                                      size: 40.r,
+                                    ),
+                                  ),
+                                  customText(text: controller.counter.toString()),
                                   InkWell(
                                     onTap: (){
                                       controller.counter+=1;
@@ -122,18 +134,6 @@ CartController controller=Get.put(CartController());
                                     },
                                     child: Icon(
                                       Icons.add_circle,
-                                      size: 40.r,
-                                    ),
-                                  ),
-                                  customText(text: controller.counter.toString()),
-                                  InkWell(
-                                    onTap: (){
-                                      if(controller.counter!=0)
-                                      controller.counter-=1;
-                                      controller.update();
-                                    },
-                                    child: Icon(
-                                      Icons.remove_circle,
                                       size: 40.r,
                                     ),
                                   ),
@@ -162,7 +162,7 @@ CartController controller=Get.put(CartController());
                             fontSize: 20.sp),
                         SizedBox(height: 5.h,),
                         RatingBar.builder(
-                          initialRating: 3,
+                          initialRating: 5,
                           minRating: 1,
                           direction: Axis.horizontal,
                           allowHalfRating: true,

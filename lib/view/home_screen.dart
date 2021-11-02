@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
              customOption(title: "My Orders",icon: Icon(Icons.reorder,color: mainTextColor,)),
              customOption(title: "Fav Destination",icon: Icon(Icons.favorite,color: mainTextColor,)),
              customOption(title: "Contact Us",icon: Icon(Icons.contact_page_outlined  ,color: mainTextColor,)),
-             customOption(title: "My Fav Destination",icon: Icon(Icons.logout,color: mainTextColor,)),
+             customOption(title: "logout",icon: Icon(Icons.logout,color: mainTextColor,)),
               Expanded(child: Container()),
         Container(
           decoration: BoxDecoration(
@@ -78,7 +78,8 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                alignment: Alignment.centerRight,
+              scale: 1.4.h,
+                alignment: Alignment.bottomRight,
                 image: AssetImage("assets/Vector_2.png"))),
         child: SingleChildScrollView(
           child: Column(
@@ -146,15 +147,21 @@ class HomeScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.r),
                       gradient: LinearGradient(
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
+                        begin: Alignment.topCenter,
+                        end: Alignment.topRight,
                         colors: gradientColors,
                       )),
                   child: Row(
                     children: [
                       Container(
                           width: 200.w,
-                          child: Image.asset("assets/enjoymeecado.png")),
+                      decoration: BoxDecoration(
+                         image: DecorationImage(
+                           fit: BoxFit.cover,
+                              image: AssetImage("assets/enjoymeecado.png")
+                      )
+                      ),
+                      ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 15.w),
                         child: customText(

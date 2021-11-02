@@ -24,7 +24,6 @@ class EditProfileScreen extends StatelessWidget {
       end: Alignment.bottomCenter,
       colors: gradientColors,
     )
-
     ),
     child: Column(
     children: [
@@ -44,20 +43,16 @@ class EditProfileScreen extends StatelessWidget {
 
     ],),
     ),
-
     customOption(title: "Home",icon: Icon(Icons.home,color: mainTextColor,),fun: (){
-
     }),
     customOption(title: "My Orders",icon: Icon(Icons.reorder,color: mainTextColor,)),
     customOption(title: "Fav Destination",icon: Icon(Icons.favorite,color: mainTextColor,)),
     customOption(title: "Contact Us",icon: Icon(Icons.contact_page_outlined  ,color: mainTextColor,)),
-    customOption(title: "My Fav Destination",icon: Icon(Icons.logout,color: mainTextColor,)),
+    customOption(title: "Logout",icon: Icon(Icons.logout,color: mainTextColor,)),
     Expanded(child: Container()),
     Container(
     decoration: BoxDecoration(
     color: Color(0xff38315F),
-
-
     ),
     height: 65.h,
     child:Row(
@@ -127,6 +122,7 @@ class EditProfileScreen extends StatelessWidget {
                     topLeft: Radius.circular(15.r),
                   ),
                   image: DecorationImage(
+                    scale: 1.4.h,
                       alignment: Alignment.centerRight,
                       image: AssetImage("assets/Vector_2.png"))),
               child: SingleChildScrollView(
@@ -170,6 +166,18 @@ class EditProfileScreen extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(vertical: 15.h, horizontal: 100.w),
                       child: customTextFormFiled(text: "Full Name"),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20.h),
+                      child: Container(
+                          alignment: Alignment.centerLeft,
+                          width: 195.w,
+                          child: customText(text: "Email", fontSize: 20.sp)),
+                    ),
+                    Padding(
+                      padding:
+                      EdgeInsets.symmetric(vertical: 15.h, horizontal: 100.w),
+                      child: customTextFormFiled(text: "Email"),
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 20.h),

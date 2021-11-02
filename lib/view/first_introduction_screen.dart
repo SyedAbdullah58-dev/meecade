@@ -27,7 +27,7 @@ class FirstItroductionScreen extends StatelessWidget {
 /*Text on Screen*/
               Padding(
                 padding: EdgeInsets.only(top: 74.h,),
-                child: Text("Enjoy All\n Items Sale \n with \n \"meecado\"  ",textAlign: TextAlign.center,style: TextStyle(
+                child: Text("Enjoy All\n Items Sale \n with \n \"Meecado\"  ",textAlign: TextAlign.center,style: TextStyle(
                   fontSize: 32.sp,color: mainTextColor,fontWeight: FontWeight.bold
 
                 ),),

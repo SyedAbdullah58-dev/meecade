@@ -51,12 +51,14 @@ Row(
       child:   Container(
 alignment: Alignment.bottomCenter,
         child: TextField(
+
+          maxLength: 1,
           controller: otpController.otp1,
           textAlign: TextAlign.center,
           keyboardType: TextInputType.phone,
 
           decoration: InputDecoration(
-
+counterText: "",
 
 
                 border: InputBorder.none
@@ -84,11 +86,12 @@ alignment: Alignment.bottomCenter,
         child: TextField(
           controller: otpController.otp2,
           textAlign: TextAlign.center,
+          maxLength: 1,
           keyboardType: TextInputType.phone,
 
           decoration: InputDecoration(
 
-
+              counterText: "",
 
             border: InputBorder.none
 
@@ -114,11 +117,12 @@ alignment: Alignment.bottomCenter,
         child: TextField(
           controller: otpController.otp3,
 keyboardType: TextInputType.phone,
+          maxLength: 1,
           textAlign: TextAlign.center,
 
           decoration: InputDecoration(
 
-
+              counterText: "",
 
             border: InputBorder.none
 
@@ -147,13 +151,14 @@ keyboardType: TextInputType.phone,
             if(otpController.otp1.text!=""&&otpController.otp2.text!=""&&otpController.otp3.text!=""&&otpController.otp4.text!="")
               Get.to(DoneScreen());
           },
+          maxLength: 1,
           controller: otpController.otp4,
           keyboardType: TextInputType.phone,
 textAlign: TextAlign.center,
           decoration: InputDecoration(
 
 
-
+              counterText: "",
             border: InputBorder.none
 
           ),

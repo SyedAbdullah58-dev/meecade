@@ -42,7 +42,8 @@ class OrderDetailScreen extends StatelessWidget {
             Icons.shopping_cart,
             size: 30.r,
             color: Color(0xffA66DA7),
-          )
+          ),
+          SizedBox(width: 20.w,)
         ],
       ),
       body: Container(
@@ -111,11 +112,12 @@ class OrderDetailScreen extends StatelessWidget {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        controller.counter += 1;
+                                        if (controller.counter != 0)
+                                          controller.counter -= 1;
                                         controller.update();
                                       },
                                       child: Icon(
-                                        Icons.add_circle,
+                                        Icons.remove_circle,
                                         size: 20.r,
                                       ),
                                     ),
@@ -125,14 +127,14 @@ class OrderDetailScreen extends StatelessWidget {
                                       child: customText(
                                           text: controller.counter.toString()),
                                     ),
+
                                     InkWell(
                                       onTap: () {
-                                        if (controller.counter != 0)
-                                          controller.counter -= 1;
+                                        controller.counter += 1;
                                         controller.update();
                                       },
                                       child: Icon(
-                                        Icons.remove_circle,
+                                        Icons.add_circle,
                                         size: 20.r,
                                       ),
                                     ),

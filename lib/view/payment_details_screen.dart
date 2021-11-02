@@ -43,7 +43,7 @@ class PaymentDetialsScreen extends StatelessWidget {
             color: Color(0xffA66DA7),
           ),
           SizedBox(
-            width: 10.w,
+            width: 20.w,
           )
         ],
       ),

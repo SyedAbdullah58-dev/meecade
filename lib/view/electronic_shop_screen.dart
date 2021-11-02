@@ -73,7 +73,7 @@ class ElectronicShopScreen extends StatelessWidget {
               customOption(title: "My Orders",icon: Icon(Icons.reorder,color: mainTextColor,)),
               customOption(title: "Fav Destination",icon: Icon(Icons.favorite,color: mainTextColor,)),
               customOption(title: "Contact Us",icon: Icon(Icons.contact_page_outlined  ,color: mainTextColor,)),
-              customOption(title: "My Fav Destination",icon: Icon(Icons.logout,color: mainTextColor,)),
+              customOption(title: "logout",icon: Icon(Icons.logout,color: mainTextColor,)),
               Expanded(child: Container()),
               Container(
                 decoration: BoxDecoration(
@@ -145,6 +145,7 @@ class ElectronicShopScreen extends StatelessWidget {
                 child: Container(
                   width: 400.w,
                   height: 80.h,
+                  alignment: Alignment.center,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.r),
                     border: Border.all(
