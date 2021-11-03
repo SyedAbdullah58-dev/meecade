@@ -229,7 +229,8 @@ class OrderSummaryScreen extends StatelessWidget {
           ),
           Padding(
             padding:  EdgeInsets.only(left:25.w,top: 5.h),
-            child: Row(children: [Container(
+            child: Row(children: [
+              Container(
               height: 8.h,
               width: 8.w,
               decoration: BoxDecoration(

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meecade/constants.dart';
+import 'package:meecade/controllers/home_screen_controller.dart';
 import 'package:meecade/view/edit_profile_screen.dart';
 import 'package:meecade/widgets/caroulsol_custom_container.dart';
 import 'package:meecade/widgets/carousol_container.dart';
@@ -15,7 +16,8 @@ import 'package:meecade/widgets/custom_text.dart';
 import 'package:meecade/widgets/electronic_custom_Carousel.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+
+  HomeScreenController homeScreenController=Get.put(HomeScreenController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -182,7 +184,11 @@ class HomeScreen extends StatelessWidget {
                   options: CarouselOptions(
                    scrollDirection: Axis.horizontal,
                   autoPlay: true,
-                    enableInfiniteScroll: true
+                    enableInfiniteScroll: true,
+                    onPageChanged: (index,_){
+                     homeScreenController.currentIndex=index;
+                     homeScreenController.update();
+                    }
                   ),
                   items: [carosoulContainer(image: "assets/boy.png",),
                     carosoulCustomContainer(image:"assets/sale.png",text1: "50% Sale",text2: "Women's Fashion",text3: "",buttonText: "Shop Now",),
@@ -192,6 +198,51 @@ class HomeScreen extends StatelessWidget {
                   ],
 
                 ),
+              ),
+             GetBuilder<HomeScreenController>(
+
+                builder: (homescreencontroller) {
+                  return Padding(
+                    padding:  EdgeInsets.only(top: 20.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 30.h,
+                          width: 30.w,
+                          decoration: BoxDecoration(
+                              color: homeScreenController.currentIndex==0?purpleContainer:Color(0xffC9A9FC),
+                              shape: BoxShape.circle
+                          ),
+                        ),SizedBox(width: 7.w,),
+                        Container(
+                          height: 30.h,
+                          width: 30.w,
+                          decoration: BoxDecoration(
+                              color: homeScreenController.currentIndex==1?purpleContainer:Color(0xffC9A9FC),
+                              shape: BoxShape.circle
+                          ),
+                        ),SizedBox(width: 7.w,),
+                        Container(
+                          height: 30.h,
+                          width: 30.w,
+                          decoration: BoxDecoration(
+                              color: homeScreenController.currentIndex==2?purpleContainer:Color(0xffC9A9FC),
+                              shape: BoxShape.circle
+                          ),
+                        ),SizedBox(width: 7.w,),
+                        Container(
+                          height: 30.h,
+                          width: 30.w,
+                          decoration: BoxDecoration(
+                              color: homeScreenController.currentIndex==3?purpleContainer:Color(0xffC9A9FC),
+                              shape: BoxShape.circle
+                          ),
+                        ),SizedBox(width: 5.w,),
+                      ],
+                    ),
+                  );
+                }
               ),
               Padding(
                 padding: EdgeInsets.only(top: 80.h),

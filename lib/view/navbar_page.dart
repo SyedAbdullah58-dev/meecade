@@ -19,8 +19,9 @@ class NavBarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     List pages = [
       HomeScreen(),
-      ElectronicShopScreen(),
       DeliveryLocationScreen(),
+      ElectronicShopScreen(),
+
       EditProfileScreen(),
       // FavouritesScreen(),
 

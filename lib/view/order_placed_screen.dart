@@ -58,40 +58,28 @@ SizedBox(height: 20.h,),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+ImageIcon(
+    AssetImage("assets/smile.png",),
+  size: 50.r,
+  color: Colors.green,
+)
 
-         Container(height: 70.h,width: 58.w,
-         decoration: BoxDecoration(
-           image: DecorationImage(
-
-             image: AssetImage("assets/smile.png",),fit: BoxFit.cover
-           )
-         ),
+            ,SizedBox(width: 15.w,),
+         ImageIcon(
+             AssetImage("assets/sad.png",)
+                 ,color: Colors.green,
+           size: 50.r,
          ),SizedBox(width: 15.w,),
-         Container(height: 70.h,width: 58.w,
-         decoration: BoxDecoration(
-           image: DecorationImage(
-             image: AssetImage("assets/sad.png",),fit: BoxFit.cover
-           )
-         ),
-         ),SizedBox(width: 15.w,),
-         Container(height: 70.h,width: 58.h,
-         decoration: BoxDecoration(
-             shape: BoxShape.circle,
-           image: DecorationImage(
+    ImageIcon(
+        AssetImage("assets/normal.png",),color: Colors.green,size: 50.r,
+    )
+    ,SizedBox(width: 15.w,),
+    ImageIcon(AssetImage("assets/veryhappy.png",)
+    ,size: 50.r,
+      color: Colors.green,
+    )
 
-             image: AssetImage("assets/normal.png",),fit: BoxFit.cover
-           )
-         ),
-         ),SizedBox(width: 10.w,),
-         Container(height: 70.h,width: 58.h,
-         decoration: BoxDecoration(
-
-           image: DecorationImage(
-
-             image: AssetImage("assets/veryhappy.png",),fit: BoxFit.cover
-           )
-         ),
-         ),SizedBox(width:15.w,),
+    ,SizedBox(width:15.w,),
         ],),
         SizedBox(height: 50.h,),
         Row(
