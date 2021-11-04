@@ -114,7 +114,7 @@ class SecondSplashScreen extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(bottom: 20.h,left: 10.w,
+          Positioned(bottom: 100.h,left: 20.w,
             child: Row(
               children: [
                 Column(
